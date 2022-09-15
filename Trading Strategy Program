@@ -1,0 +1,33 @@
+import tkinter as tk
+import webbrowser
+from tkinter import filedialog, Text
+import os
+root = tk.Tk()
+root.title("Trading Strategy")
+
+
+
+
+canvas = tk.Canvas(root, height=700, width=700, bg ="#263D42")
+canvas.pack()
+
+frame = tk.Frame(root, bg="white")
+frame.place(relwidth=0.8, relheight=0.8, relx=0.1, rely=0.1)
+
+myText = Text(root)
+myText.pack()
+myText.config(state="normal")
+myText.insert(1.0, "")
+myText.config(state="disabled")
+myText.place(relwidth=0.5, relheight=0.5, relx=0.1, rely=0.1)
+
+def openlink():
+    webbrowser.open("https://www.tradingview.com/chart")
+    webbrowser.open("https://pastebin.pl/view/b9dbc8d3")
+
+
+
+openFile = tk.Button(root, text="Open MACD Trading Strategy", padx=10, pady=10, fg="white", bg="#263D42",  command = openlink)
+openFile.pack()
+
+root.mainloop()
